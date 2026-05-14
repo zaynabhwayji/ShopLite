@@ -1,3 +1,14 @@
+:root {
+    --primary-color: #0D9488;
+    --secondary-color: rgb(22, 115, 107);
+    --text-color: #050211;
+
+}
+
+body {
+    background-color: rgb(213, 215, 222);
+}
+
 /* 4-column product grid */
 .product-grid {
     display: flex;
@@ -30,7 +41,7 @@
 /* push to bottom */
 /* Active filter button */
 .filter-btn.active {
-    background: #0D9488;
+    background: var(--primary-color);
     color: white;
 }
 
@@ -47,3 +58,43 @@
         padding: 10px;
     }
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 8px;
+}
+
+#searchInput {
+    padding: 10px 50px 10px 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    background: white;
+}
+
+#searchInput::placeholder {
+    color: var(--secondary-color);
+}
+
+#cartBtn {
+    background-color: #e68a0a;
+    border: none;
+    color: var(--text-color);
+    padding: 15px 32px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
