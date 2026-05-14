@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopLite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">■ ShopLite</div>
+        <input type="text" id="searchInput" placeholder="■ Search products...">
+        <button class="cart-btn" id="cartBtn">
+            ■ Cart (<span id="cartCount">0</span>)
+        </button>
+    </nav>
+    <div class="hero-banner">
+        <p>■ Summer Sale — Up to 40% Off!</p>
+    </div>
+    <div class="filter-bar">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="Clothes">Clothes</button>
+        <button class="filter-btn" data-cat="Electronics">Electronics</button>
+        <button class="filter-btn" data-cat="Books">Books</button>
+        <button class="filter-btn" data-cat="Shoes">Shoes</button>
+    </div>
+    <main class="product-grid" id="productGrid"></main>
+    <aside class="cart-panel" id="cartPanel">
+        <h3>■ Your Cart</h3>
+        <div id="cartItems"></div>
+        <p class="cart-total">Total: $<span id="cartTotal">0.00</span></p>
+        <button id="checkoutBtn">Checkout</button>
+        <button id="clearCartBtn">Clear Cart</button>
+    </aside>
+    <footer class="footer">
+        <p>© 2025 ShopLite · Built with HTML, CSS &amp; JS</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
