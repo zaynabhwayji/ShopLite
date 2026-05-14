@@ -98,3 +98,12 @@ body {
     border-radius: 8px;
 }
 
+.hero-banner p {
+    background-color: #c3f2ed;
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0px;
+    padding: 10px;
+}
