@@ -9,14 +9,24 @@ const products = [
     { id: 8, name: "Backpack", price: 55.00, category: "Clothes", emoji: "■" },
 ];
 
-let cart = JSON.parse(localStorage.getItem("items")) || [];
 
 const searchInput = document.getElementById("searchInput");
 const productGrid = document.getElementById("productGrid");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const cartBtn = document.getElementById("cartBtn");
 const cartItems = document.querySelector("#cartItems");
-const productGrid = document.querySelector(".product-grid");
+const cartPanel = document.getElementById("cartPanel");
+
+let cart = JSON.parse(localStorage.getItem("items")) || [];
+
+let cartCount = 0;
+
+cart.forEach(item => {
+    cartCount += item.quantity;
+});
+
+cartBtn.textContent = `Cart (${cartCount})`;
+
 
 let activeCategory = "all";
 
@@ -92,6 +102,8 @@ cartBtn.addEventListener("click", () => {
 
 renderCart();
 
+
+
 function addToCart(productId) {
     const cartItem = {
     id: Date.now(),
@@ -104,20 +116,25 @@ function addToCart(productId) {
     } else {
     cart.push(cartItem);
     }
+    cartCount += 1;
+    cartBtn.textContent = `Cart (${cartCount})`;
     addToLocalStorage(cart);
     renderCart();
 }
 
 function RemoveFromCart(productId) {
-  const existingItem = cart.find(item => item.pId === productId);
+    const existingItem = cart.find(item => item.pId === productId);
 
-  if (existingItem) {
+    if (existingItem) {
 
-    if (existingItem.quantity == 1) {
-      cart = cart.filter(item => item.pId !== productId);
-    } else {
-      existingItem.quantity -= 1;
+        if (existingItem.quantity == 1) {
+            cart = cart.filter(item => item.pId !== productId);
+        } else {
+            existingItem.quantity -= 1;
     }
+
+    cartCount -= 1;
+    cartBtn.textContent = `Cart (${cartCount})`;
 
     addToLocalStorage(cart);
     renderCart();
@@ -154,11 +171,27 @@ cart.forEach(cartItem => {
         </div> 
     `;
 });
-document.querySelector("#cartTotal").textContent = total;
+document.querySelector("#cartTotal").textContent = total.toFixed(2);
 }
 
 function ClearCart() {
     cart = [];
+    cartCount = 0;
+    cartBtn.textContent = `Cart (0)`;
     addToLocalStorage(cart);
     renderCart();
+}
+
+function CheckOut() {
+
+    const total = document.querySelector("#cartTotal").textContent;
+
+    alert("Your total is $" + total);
+
+    ClearCart();
+
+    cartCount = 0;
+
+    cartBtn.textContent = `Cart (${cartCount})`;
+
 }
