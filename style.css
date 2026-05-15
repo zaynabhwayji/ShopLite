@@ -1,3 +1,7 @@
+:root{
+    --primary: #0D9488;
+}
+
 /* 4-column product grid */
 .product-grid {
     display: flex;
@@ -50,12 +54,12 @@
 /* push to bottom */
 /* Active filter button */
 .filter-btn.active {
-    background: #0D9488;
+    background:var(--primary);
     color: white;
 }
 
 .filter-btn:hover{
-    background-color: #0D9488;
+    background-color:var(--primary);
     color: white;
 }
 
