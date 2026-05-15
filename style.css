@@ -23,7 +23,7 @@ body {
     flex-direction: column;
     background: white;
     border-radius: 10px;
-    padding: 14px;
+    padding: 14px 14px 5px 14px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease;
 }
@@ -59,12 +59,12 @@ body {
 /* push to bottom */
 /* Active filter button */
 .filter-btn.active {
-    background:var(--primary);
+    background:var(--primary-color);
     color: white;
 }
 
 .filter-btn:hover{
-    background-color:var(--primary);
+    background-color:var(--primary-color);
     color: white;
 }
 
@@ -178,7 +178,7 @@ body {
 
 aside{
     position: fixed;
-    top: 68%;
+    top: 22%;
     right: 0;
     border-radius: 8px;
     border: 2px solid var(--primary-color);
@@ -187,6 +187,9 @@ aside{
     display: flex;
     flex-direction: column;
     padding: 0 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    width: 300px;
 }
 
 aside.cart-panel h3 {
@@ -216,7 +219,7 @@ aside button {
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px; 
-    margin: 2px;
+    margin: 5px 2px;
 }
 
 .cart-panel{
@@ -228,3 +231,16 @@ aside button {
     transform: translateX(0);
 }
 
+aside #cartItems .product-card{
+    margin-bottom: 10px;
+}
+aside .product-card{
+    width: calc(100% - 16px);
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    padding: 14px 14px 5px 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
