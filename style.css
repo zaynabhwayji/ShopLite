@@ -87,27 +87,6 @@ body {
 
 /* Responsive: 2 columns on mobile */
 @media (max-width: 600px) {
-    .filter-bar {
-        justify-content: center;
-        padding-left: 8px;
-        gap: 8px;
-    }
-
-    .filter-btn {
-        font-size: 12px;
-        padding: 6px 14px;
-    }
-    .footer {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border-radius: 0;
-        padding: 5px 8px;
-    }
-
-    .footer p {
-        font-size: 11px;
-    }
     .product-card {
         width: calc(50% - 16px);
     }
@@ -240,7 +219,12 @@ aside button {
     margin: 2px;
 }
 
-#cartPanel{
-    display: none;
+.cart-panel{
+    transform: translateX(100%);
+    transition: 0.3s;
+}
+
+.cart-panel.active{
+    transform: translateX(0);
 }
 
