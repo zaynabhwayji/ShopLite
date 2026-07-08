@@ -244,3 +244,16 @@ aside .product-card{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease;
 }
+
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+    }
+    .product-card {
+        width: 100%;
+    }
+    .filter-bar {
+       overflow: hidden;
+       overflow-x: scroll;
+    }
+}
